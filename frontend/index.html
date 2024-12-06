@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanlerproyecto</title>
+</head>
+<body>
+  <h1>Bienvenido a Hanlerproyecto</h1>
+  <button id="fetchData">Obtener Mensaje</button>
+  <p id="message"></p>
+  <script>
+    document.getElementById('fetchData').addEventListener('click', async () => {
+      const response = await fetch('/api');
+      const data = await response.json();
+      document.getElementById('message').innerText = data.message;
+    });
+  </script>
+</body>
+</html>

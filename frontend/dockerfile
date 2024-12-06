@@ -1,0 +1,19 @@
+# Imagen base
+FROM node:16
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos necesarios
+COPY backend ./backend
+COPY frontend ./frontend
+COPY package*.json ./
+
+# Instalar dependencias
+RUN npm install
+
+# Exponer el puerto
+EXPOSE 3000
+
+# Comando para ejecutar
+CMD ["node", "backend/server.js"]
